@@ -15,6 +15,7 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 import { routes } from "../../routes";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -109,9 +110,9 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Box
-                as="a"
+                as={Link}
+                to={navItem.path ?? "#"}
                 p={2}
-                href={navItem.path ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -149,8 +150,8 @@ const MobileNavItem = ({ label, path }: NavItem) => {
     <Stack spacing={4}>
       <Box
         py={2}
-        as="a"
-        href={path ?? "#"}
+        as={Link}
+        to={path ?? "#"}
         justifyContent="space-between"
         alignItems="center"
         _hover={{

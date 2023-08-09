@@ -1,5 +1,10 @@
 export const routes = [
   {
+    label: "Home",
+    path: "/",
+    element: <div>One</div>,
+  },
+  {
     label: "One",
     path: "/one",
     element: <div>One</div>,
