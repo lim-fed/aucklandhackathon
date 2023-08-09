@@ -54,7 +54,6 @@ export const Navbar = () => {
           >
             Logo
           </Text>
-
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -113,6 +112,7 @@ const DesktopNav = () => {
                 as={Link}
                 to={navItem.path ?? "#"}
                 p={2}
+                display={"flex"}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -121,7 +121,7 @@ const DesktopNav = () => {
                   color: linkHoverColor,
                 }}
               >
-                {navItem.label}
+                {navItem.icon ? navItem.icon : navItem.label}
               </Box>
             </PopoverTrigger>
           </Popover>
@@ -145,7 +145,7 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, path }: NavItem) => {
+const MobileNavItem = ({ label, path, icon }: NavItem) => {
   return (
     <Stack spacing={4}>
       <Box
@@ -162,7 +162,7 @@ const MobileNavItem = ({ label, path }: NavItem) => {
           fontWeight={600}
           color={useColorModeValue("gray.600", "gray.200")}
         >
-          {label}
+          {icon ? icon : label}
         </Text>
       </Box>
     </Stack>
@@ -172,4 +172,5 @@ const MobileNavItem = ({ label, path }: NavItem) => {
 interface NavItem {
   label: string;
   path?: string;
+  icon?: React.ReactElement;
 }

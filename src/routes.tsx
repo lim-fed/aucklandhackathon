@@ -1,32 +1,20 @@
+import { Icon } from "@chakra-ui/react";
+import { FaShoppingBag } from "react-icons/fa";
 export const routes = [
   {
-    label: "Home",
+    label: "Marketplace",
     path: "/",
-    element: <div>One</div>,
+    element: <div>This is the landing page</div>,
+    icon: <Icon as={FaShoppingBag} fontSize={"1.2rem"} />,
   },
   {
-    label: "One",
-    path: "/one",
-    element: <div>One</div>,
+    label: "Insights",
+    path: "/insights",
+    element: <div>Insights</div>,
   },
   {
-    label: "Two",
-    path: "/two",
-    element: <div>Two</div>,
-  },
-  {
-    label: "Three",
-    path: "/three",
-    element: <div>Three</div>,
-  },
-  {
-    label: "Four",
-    path: "/four",
-    element: <div>Four</div>,
-  },
-  {
-    label: "Five",
-    path: "/five",
-    element: <div>Five</div>,
+    label: "Profile",
+    path: "/profile",
+    element: <div>Profile</div>,
   },
 ];
