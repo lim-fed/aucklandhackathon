@@ -1,7 +1,7 @@
-import "./App.css";
+import { Navbar } from "./components/Navbar/Navbar";
 
 function App() {
-  return <>Welcome to the hackathon!</>;
+  return <Navbar />;
 }
 
 export default App;
