@@ -16,7 +16,7 @@ import { routes } from "../../routes";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen } = useDisclosure();
   return (
     <Box>
       <Flex
