@@ -17,7 +17,7 @@ ReactDOM.createRoot(rootElement!).render(
           flexDirection={"column"}
         >
           <Navbar />
-          <Box h={"100%"}>
+          <Box h={"100%"} overflowY={"scroll"}>
             <Routes>
               {routes.map((i, idx) => (
                 <Route
