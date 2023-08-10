@@ -3,25 +3,24 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
   Slide,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons";
 
 import { routes } from "../../routes";
 import { Link } from "react-router-dom";
+import { BsBell, BsGear } from "react-icons/bs";
 
 export const Navbar = () => {
   const { isOpen } = useDisclosure();
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={"black"}
+        color={"white"}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -29,57 +28,31 @@ export const Navbar = () => {
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
+        justifyContent={"center"}
       >
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
+        <IconButton
+          flex={1}
+          icon={<BsGear w={5} h={5} />}
+          variant={"unstyled"}
+          aria-label={"Toggle Navigation"}
+        />
+        <Text
+          flex={1}
+          textAlign={useBreakpointValue({ base: "center", md: "left" })}
+          fontFamily={"heading"}
+          color={"white"}
         >
-          <IconButton
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            Logo
-          </Text>
-        </Flex>
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          <IconButton
-            icon={<SearchIcon w={5} h={5} />}
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button>
-        </Stack>
+          Logo
+        </Text>
+        <IconButton
+          flex={1}
+          display="flex"
+          justifyContent={"right"}
+          variant={"unstyled"}
+          icon={<BsBell w={5} h={5} />}
+          aria-label={"Toggle Navigation"}
+        />
       </Flex>
-
       <Slide in={isOpen} direction="left" style={{ top: "60px" }}>
         <MobileNav />
       </Slide>

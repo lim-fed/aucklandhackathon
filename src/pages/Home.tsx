@@ -1,16 +1,32 @@
-import { Heading, InputLeftElement, Box, Icon } from "@chakra-ui/react";
+import { InputLeftElement, Box, Icon } from "@chakra-ui/react";
 import { InputGroup, InputRightElement, Input } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { Post } from "../components/Post/Post";
+const posts = [
+  {
+    userName: "Lily",
+    description:
+      "Hey Ecocers! I have three large bunches of fresh basil, wanting to swap this for some delicious lemons or limes. Let me know!",
+    profileImage: "./profiles/Lily.jpg",
+    postImage: "./posts/basil.png",
+  },
+  {
+    userName: "Terry",
+    description:
+      "Hey everyone! I am going away for the next few weeks so won’t be using my home grown agria potatoes - free to a good home!! First in first served wink 😉",
+    profileImage: "./profiles/terry.png",
+    postImage: "./posts/basil.png",
+  },
+];
 export const Home = () => {
   return (
-    <Box>
-      <InputGroup position={"absolute"} px="1rem" mt="1rem">
-        <InputLeftElement ms="1rem">
+    <Box bg="gray.100">
+      <InputGroup position={"absolute"} p="1rem" bg="white">
+        <InputLeftElement m="1rem">
           <SearchIcon />
         </InputLeftElement>
-        <InputRightElement me="1rem" pointerEvents="none">
+        <InputRightElement m="1rem" pointerEvents="none">
           <Icon transform={"rotate(90deg)"} as={GiSettingsKnobs} />
         </InputRightElement>
         <Input
@@ -20,10 +36,10 @@ export const Home = () => {
           placeholder="Search"
         />
       </InputGroup>
-      <Box p="1rem" pt="4rem">
-        <Heading as="h1">Kia ora Rose</Heading>
-        <Post />
-        <Post />
+      <Box pt="5rem">
+        {posts.map((item) => (
+          <Post {...item} />
+        ))}
       </Box>
     </Box>
   );
