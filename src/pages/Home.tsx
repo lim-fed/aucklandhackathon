@@ -5,7 +5,7 @@ import { GiSettingsKnobs } from "react-icons/gi";
 import { Post } from "../components/Post/Post";
 const posts = [
   {
-    userName: "Lily",
+    userName: "Dwayne",
     description:
       "Hey Ecocers! I have three large bunches of fresh basil, wanting to swap this for some delicious lemons or limes. Let me know!",
     profileImage: "./profiles/Lily.jpg",
@@ -16,7 +16,7 @@ const posts = [
     description:
       "Hey everyone! I am going away for the next few weeks so won’t be using my home grown agria potatoes - free to a good home!! First in first served wink 😉",
     profileImage: "./profiles/terry.png",
-    postImage: "./posts/basil.png",
+    postImage: "./posts/potato.png",
   },
 ];
 export const Home = () => {

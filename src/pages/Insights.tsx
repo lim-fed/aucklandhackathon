@@ -9,13 +9,17 @@ import {
   Text,
   Flex,
   Link,
+  Image,
+  Heading,
+  Button,
 } from "@chakra-ui/react";
+import { Chat } from "../components/Chat/Chat";
 
 export const Eco = () => {
   const ChatSection = (props) => {
     return (
-      <Box>
-        <Text color="#B5B5B5" fontSize={"1rem"}>
+      <Box mb={"2rem"}>
+        <Text color="#B5B5B5" fontSize={"1rem"} mb={"0.5rem"} fontWeight="bold">
           {props.title}
         </Text>
         {props.items.map((i) => (
@@ -42,8 +46,17 @@ export const Eco = () => {
           padding="1rem"
           h={"100%"}
         >
-          <InputGroup alignItems={"center"} display={"flex"} gap={3}>
-            <Input bg="white" />
+          <InputGroup
+            mb={"1rem"}
+            alignItems={"center"}
+            display={"flex"}
+            gap={3}
+          >
+            <Input
+              bg="white"
+              color="black"
+              placeholder="Grow something new - start a new chat with Eco"
+            />
             <IconButton
               p={0}
               aria-label="Close"
@@ -75,6 +88,44 @@ export const Eco = () => {
             title="Your garden"
             items={["Gardening Supplies 🪴", "Soils, fertilisers and seeds 🌱"]}
           />
+          <Flex
+            marginY={"15rem"}
+            flexDir={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <Image src="./Lemon.png" height={"8rem"} />
+            <Heading textAlign={"center"} as="h1" fontSize={"1rem"}>
+              Wanting to trade your produce?
+            </Heading>
+            <Text
+              fontSize={"0.875rem"}
+              textAlign={"center"}
+              marginBottom={"1rem"}
+            >
+              Ask Eco to help you post your home grown goods to the Eco Market
+              Place!
+            </Text>
+            <Flex gap={3} w="100%">
+              <Button
+                borderRadius={"1rem"}
+                flex={1}
+                bg={"white"}
+                fontSize={"0.75rem"}
+              >
+                Let’s get trading!
+              </Button>
+              <Button
+                borderRadius={"1rem"}
+                flex={1}
+                bg={"black"}
+                color="white"
+                fontSize={"0.75rem"}
+              >
+                I want to learn more
+              </Button>
+            </Flex>
+          </Flex>
         </Box>
       </Slide>
     );
@@ -99,6 +150,7 @@ export const Eco = () => {
         </IconButton>
         <Text fontSize={"1rem"}>Roses Cherry Tomatoes 🍅</Text>
       </Flex>
+      <Chat />
       <EcoDrawer />
     </Box>
   );
