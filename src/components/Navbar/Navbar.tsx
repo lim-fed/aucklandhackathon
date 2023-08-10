@@ -5,9 +5,9 @@ import {
   IconButton,
   Stack,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   Slide,
+  Image,
 } from "@chakra-ui/react";
 
 import { routes } from "../../routes";
@@ -36,14 +36,8 @@ export const Navbar = () => {
           variant={"unstyled"}
           aria-label={"Toggle Navigation"}
         />
-        <Text
-          flex={1}
-          textAlign={useBreakpointValue({ base: "center", md: "left" })}
-          fontFamily={"heading"}
-          color={"white"}
-        >
-          Logo
-        </Text>
+
+        <Image src="./Logo.png" h="3rem" w="3rem" objectFit={"cover"} />
         <IconButton
           flex={1}
           display="flex"
